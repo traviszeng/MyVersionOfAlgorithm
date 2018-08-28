@@ -1,3 +1,8 @@
+"""
+Implementing classic sort algorithm
+
+"""
+
 def InsertSort(a):
     """
     Insert sort algorithm
@@ -33,7 +38,7 @@ def MergeSort(a,p,r):
 
 def Merge(a,p,l,r):
     """
-    merge procedure of merge sort
+    child merge procedure of merge sort
 
     :param a: unsorted list
     :param p: started index
@@ -61,6 +66,23 @@ def Merge(a,p,l,r):
             j+=1
 
 
+def bubbleSort(a):
+    """
+    Bubble sort algorithm
+
+    :param a: unsorted list
+    :return:
+    """
+
+    for i in range(0,len(a)):
+        for j in range(i,len(a)):
+            if a[i]>a[j]:
+                tmp = a[i]
+                a[i]=a[j]
+                a[j]=tmp
+
+
+
 
 a = [5,4,3,6,1]
 
@@ -69,4 +91,9 @@ print(a)
 
 a=[6,5,4,3,1,2,4,6,8]
 MergeSort(a,0,len(a)-1)
+print(a)
+
+
+a=[9,8,7,1,2,3,4,6,5,7]
+bubbleSort(a)
 print(a)
