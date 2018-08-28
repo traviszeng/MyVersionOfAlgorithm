@@ -1,7 +1,8 @@
 def InsertSort(a):
     """
-    :params: unsorted list
+    Insert sort algorithm
 
+    :params: unsorted list
     :return: sorted list
     """
     for i in range(1,len(a)):
@@ -34,14 +35,14 @@ def Merge(a,p,l,r):
     """
     merge procedure of merge sort
 
-    :param a:
-    :param p:
-    :param l:
-    :param r:
+    :param a: unsorted list
+    :param p: started index
+    :param l: middle index
+    :param r: ending index
     :return:
     """
     n1 = l-p+1
-    n2 = r-l
+    n2 = r-l-1
 
     L = a[p:l+1]
     L.append(999999)
@@ -51,7 +52,7 @@ def Merge(a,p,l,r):
 
     i = 0
     j = 0
-    for k in range(p,r):
+    for k in range(p,r+1):
         if L[i]<=R[j]:
             a[k]=L[i]
             i+=1
@@ -67,5 +68,5 @@ a = InsertSort(a)
 print(a)
 
 a=[6,5,4,3,1,2,4,6,8]
-MergeSort(a,0,len(a))
+MergeSort(a,0,len(a)-1)
 print(a)
